@@ -1,5 +1,5 @@
-version: '3.7'
-
+---
+version: "3.7"
 services:
   swarm:
     image: mithrand0/reactive-drop-linux-server:latest
@@ -8,22 +8,20 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      - "port=27015"
-      - "maxplayers=32"
-      - "rd_hostname=ASRD FRANCE 9 32P"
-      - "rd_rcon_password=x3f6hu5v5v"
-      - "wine_fastsync=1"
+      - port=27015
+      - maxplayers=32
+      - rd_hostname=ASRD FRANCE 9 32P
+      - rd_rcon_password=x3f6hu5v5v
+      - wine_fastsync=1
     networks:
       - network
     ports:
-      - "27025:27025 /tcp"
-      - "27050:27050 /udp"
+      - 27015:27015 /tcp
+      - 27015:27015 /udp
     volumes:
-      - "/dev/winesync:/dev/winesync"
-      - "reactivedrop:/usr/lib/games/reactivedrop"
-
+      - /dev/winesync:/dev/winesync
+      - reactivedrop:/usr/lib/games/reactivedrop
 volumes:
-  reactivedrop:
-
+  reactivedrop: null
 networks:
-  network:
+  network: null
