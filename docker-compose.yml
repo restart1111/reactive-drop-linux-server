@@ -1,8 +1,7 @@
----
-version: "3.7"
+version: '3.7'
 services:
   swarm:
-    image: mithrand0/reactive-drop-linux-server:latest
+    image: 'mithrand0/reactive-drop-linux-server:latest'
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,11 +15,11 @@ services:
     networks:
       - network
     ports:
-      - 27015:27015 /tcp
-      - 27015:27015 /udp
+      - '27015:27015 /tcp'
+      - '27015:27015 /udp'
     volumes:
-      - /dev/winesync:/dev/winesync
-      - reactivedrop:/usr/lib/games/reactivedrop
+      - '/dev/winesync:/dev/winesync'
+      - 'reactivedrop:/usr/lib/games/reactivedrop'
 volumes:
   reactivedrop: null
 networks:
