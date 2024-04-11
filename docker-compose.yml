@@ -8,16 +8,16 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      - "port=27050"
-      - "maxplayers=4"
-      - "rd_hostname=Reactive Drop Linux server"
-      - "rd_rcon_password=swarmtest"
+      - "port=27015"
+      - "maxplayers=32"
+      - "rd_hostname=ASRD FRANCE 9 32P"
+      - "rd_rcon_password=x3f6hu5v5v"
       - "wine_fastsync=1"
     networks:
       - network
     ports:
-      - "27050:27050 /tcp"
-      - "27050:27050 /udp"
+      - "27015:27015 /tcp"
+      - "27015:27015 /udp"
     volumes:
       - "/dev/winesync:/dev/winesync"
       - "reactivedrop:/usr/lib/games/reactivedrop"
